@@ -13,7 +13,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Build project
         run: |
           composer install --no-dev --optimize-autoloader
@@ -27,7 +27,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{ github.event.repository.name }}.zip
-          asset_name: churchtools-wp-sync
+          asset_name: churchtools-wp-sync.zip
           tag: ${{ github.ref }}
           overwrite: true
-          body: "This is my release text"
+#          body: "This is my release text"
